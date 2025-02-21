@@ -4,7 +4,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const env = process.env.NODE_ENV;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
+
 
 // Set up EJS as the template engine
 app.set('view engine', 'ejs');
