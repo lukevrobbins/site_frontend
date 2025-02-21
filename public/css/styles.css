@@ -1,0 +1,192 @@
+/* Apply the Montserrat font to the body for a modern look */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+/* Header styling */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px 0;
+  }
+
+/* Header title styling */
+header h1 {
+    margin: 0;
+    font-size: 35px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #bbeeca;
+}
+
+.socials a {
+    color: #555;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+  
+.socials a:hover {
+    color: #007BFF;
+}
+
+.socials img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: 30px;
+}
+
+/* Container to center and space out content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header top: contains the site title and social icons */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+/* Landing page styles */
+.landing {
+    padding: 60px 20px;
+    background-color: #bbeeca;
+}
+
+.landing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Headshot styling */
+.headshot img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Intro text styling */
+.intro-text {
+flex: 1;
+}
+
+.intro-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.intro-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Projects Cards Section */
+.projects-cards {
+    padding: 60px 20px;
+    background-color: #fff;
+  }
+  
+.cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    display: block;
+    width: 300px;
+    padding: 20px;
+    background-color: #bbeeca;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Hover animation for cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+  /* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .landing-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .headshot img {
+        width: 150px;
+        height: 150px;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
