@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include('../partials/header', { title: "Chatbot" }) %>
+    <main>
+      <div id="chat-container">
+        <!-- Chat messages will appear here -->
+      </div>
+      <form id="chat-form">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="Type your message..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="send-btn">Send</button>
+      </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <script>
+      // Select elements
+      const chatContainer = document.getElementById('chat-container');
+      const chatForm = document.getElementById('chat-form');
+      const chatInput = document.getElementById('chat-input');
+
+      // Function to append a message to the chat container
+      function appendMessage(text, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', type === 'user' ? 'user-message' : 'bot-message');
+        
+        if (type === 'bot') {
+          // Convert markdown to HTML using marked
+          messageDiv.innerHTML = marked.parse(text);
+        } else {
+          messageDiv.textContent = text;
+        }
+  
+        chatContainer.appendChild(messageDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll
+      }
+
+      // Listen for form submission
+      chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const userMessage = chatInput.value.trim();
+        if (!userMessage) return;
+        
+        // Display user message
+        appendMessage(userMessage, 'user');
+        chatInput.value = '';
+
+        try {
+          // Call the server-side API that proxies to your Azure OpenAI endpoint.
+          const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ prompt: userMessage })
+          });
+
+          const data = await response.json();
+          // Assuming the API returns an object with a 'reply' property
+          appendMessage(data.reply || 'No response from API.', 'bot');
+        } catch (error) {
+          console.error('Error:', error);
+          appendMessage('Error: Unable to fetch response.', 'bot');
+        }
+      });
+    </script>
+  </body>
+</html>
