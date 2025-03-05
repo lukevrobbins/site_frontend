@@ -28,6 +28,9 @@ app.use('/api/', apiRoutes);
 const readingRoutes = require('./routes/reading');
 app.use('/reading/', readingRoutes);
 
+const databaseRoutes = require('./routes/database');
+app.use('/database/', databaseRoutes);
+
 // Start the server
 const HOST = env === 'development' ? 'localhost' : '0.0.0.0';
 app.listen(PORT, HOST, () => console.log(`Server running on http://${HOST}:${PORT}`));
