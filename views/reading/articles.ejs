@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('../partials/header', { title: title }) %>
+  
+  <main class="container">
+    <section class="reading-content">
+      <h1>Recent Articles</h1>
+      <p class="section-intro">Interesting articles and blog posts that have caught my attention recently.</p>
+      
+      <div class="reading-list">
+        <% articles.forEach(article => { %>
+          <div class="reading-item">
+            <h2 class="reading-title"><a href="<%= article.link %>" target="_blank"><%= article.title %></a></h2>
+            <p class="reading-meta">by <%= article.author %> in <%= article.source %></p>
+            <p class="reading-description"><%= article.description %></p>
+          </div>
+        <% }); %>
+      </div>
+      
+      <div class="back-link">
+        <a href="/about">← Back to About</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

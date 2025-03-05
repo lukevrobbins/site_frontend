@@ -25,6 +25,9 @@ app.use('/projects/', projectRoutes);
 const apiRoutes = require('./routes/api');
 app.use('/api/', apiRoutes);
 
+const readingRoutes = require('./routes/reading');
+app.use('/reading/', readingRoutes);
+
 // Start the server
 const HOST = env === 'development' ? 'localhost' : '0.0.0.0';
 app.listen(PORT, HOST, () => console.log(`Server running on http://${HOST}:${PORT}`));

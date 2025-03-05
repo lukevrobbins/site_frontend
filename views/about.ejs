@@ -7,9 +7,135 @@
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <%- include('partials/header') %>
-    <h1>About</h1>
-    <p>This is the about page!</p>
+    <%- include('partials/header', { title: "About Me" }) %>
+    
+    <main class="container">
+      <!-- What I'm Reading Section -->
+      <section class="reading-section">
+        <h2>What I'm Reading</h2>
+        <p>My Reading Notion Tracker: <a href="https://luke-robbins.notion.site/ai-ml-llm-paper-summaries" style = "text-decoration: none;">Paper Summaries</a></p>
+        <div class="reading-links">
+          <a href="/reading/books" class="reading-card">
+            <h3>Recent Books</h3>
+            <p>Books I've been reading recently that have influenced my thinking and work.</p>
+          </a>
+          <a href="/reading/papers" class="reading-card">
+            <h3>Recent Papers</h3>
+            <p>Academic papers and research I'm currently exploring in machine learning and AI.</p>
+          </a>
+          <a href="/reading/articles" class="reading-card">
+            <h3>Recent Articles</h3>
+            <p>Interesting articles and blog posts that have caught my attention.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section class="about-section">
+        <h2>About Me</h2>
+        
+        <div class="resume-section">
+          <h3>Professional Summary</h3>
+          <p>
+            I'm a Machine Learning Engineer with experience in building and deploying AI solutions across various domains. My expertise spans from traditional ML algorithms to deep learning models, with a focus on creating practical, scalable applications.
+          </p>
+        </div>
+
+        <div class="resume-section">
+          <h3>Experience</h3>
+          
+          <div class="resume-item">
+            <div class="resume-header">
+              <h4>Senior Machine Learning Engineer</h4>
+              <p class="company">TechCorp Inc.</p>
+              <p class="date">January 2023 - Present</p>
+            </div>
+            <ul class="resume-details">
+              <li>Lead development of NLP-powered recommendation systems</li>
+              <li>Designed and implemented ML pipelines for large-scale data processing</li>
+              <li>Mentored junior engineers on best practices in ML development</li>
+            </ul>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-header">
+              <h4>Machine Learning Engineer</h4>
+              <p class="company">AI Solutions Ltd.</p>
+              <p class="date">June 2020 - December 2022</p>
+            </div>
+            <ul class="resume-details">
+              <li>Developed computer vision models for object detection and classification</li>
+              <li>Created and maintained data pipelines for model training</li>
+              <li>Collaborated with cross-functional teams to integrate ML systems</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Education</h3>
+          
+          <div class="resume-item">
+            <div class="resume-header">
+              <h4>M.S. in Computer Science</h4>
+              <p class="institution">University of Technology</p>
+              <p class="date">2018 - 2020</p>
+            </div>
+            <p class="resume-details">Specialized in Machine Learning and Artificial Intelligence</p>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-header">
+              <h4>B.S. in Computer Science</h4>
+              <p class="institution">State University</p>
+              <p class="date">2014 - 2018</p>
+            </div>
+            <p class="resume-details">Minor in Mathematics</p>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Skills</h3>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h4>Programming Languages</h4>
+              <ul>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>SQL</li>
+                <li>Java</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Machine Learning</h4>
+              <ul>
+                <li>TensorFlow</li>
+                <li>PyTorch</li>
+                <li>scikit-learn</li>
+                <li>Natural Language Processing</li>
+                <li>Computer Vision</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Cloud & DevOps</h4>
+              <ul>
+                <li>Azure</li>
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>CI/CD Pipelines</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Certifications</h3>
+          <ul class="certifications-list">
+            <li>Microsoft Certified: Azure AI Engineer Associate</li>
+            <li>TensorFlow Developer Certificate</li>
+            <li>AWS Certified Machine Learning - Specialty</li>
+          </ul>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
-

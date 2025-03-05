@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('../partials/header', { title: title }) %>
+  
+  <main class="container">
+    <section class="reading-content">
+      <h1>Recent Books</h1>
+      <p class="section-intro">Here are some books I've been reading lately that have influenced my thinking and work.</p>
+      
+      <div class="reading-list">
+        <% books.forEach(book => { %>
+          <div class="reading-item">
+            <h2 class="reading-title"><a href="<%= book.link %>" target="_blank"><%= book.title %></a></h2>
+            <p class="reading-meta">by <%= book.author %></p>
+            <p class="reading-description"><%= book.description %></p>
+          </div>
+        <% }); %>
+      </div>
+      
+      <div class="back-link">
+        <a href="/about">← Back to About</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
