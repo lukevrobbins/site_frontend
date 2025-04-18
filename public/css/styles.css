@@ -276,6 +276,7 @@ flex: 1;
 
 .resume-item {
     margin-bottom: 25px;
+    margin-left: 20px;
 }
 
 .resume-header {
@@ -283,13 +284,14 @@ flex: 1;
 }
 
 .resume-header h4 {
-    font-size: 18px;
+    font-size: 16px;
     margin: 0 0 5px 0;
 }
 
-.company, .institution {
+.resume-company {
     font-weight: 600;
-    margin: 0;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .date {
@@ -302,6 +304,7 @@ flex: 1;
     margin-top: 10px;
     padding-left: 20px;
 }
+
 
 .skills-container {
     display: flex;
